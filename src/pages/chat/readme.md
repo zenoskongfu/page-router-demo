@@ -1,0 +1,1 @@
+## test dynamic with ssr option
