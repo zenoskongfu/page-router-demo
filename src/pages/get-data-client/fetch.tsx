@@ -1,12 +1,17 @@
-import { fetcher } from "./fetcher";
+import { fetcher } from "../../utils/_fetcher";
 
-export default async function Fetch() {
-	const data = await fetcher();
-
+export default function Fetch(props: { name: string }) {
 	return (
 		<div>
-			swr
-			<div className='pt-10'>{data?.name || "no data"}</div>
+			fetch
+			<div className='pt-5'>{props?.name || "no data"}</div>
 		</div>
 	);
 }
+
+export const getServerSideProps = async () => {
+	const data = await fetcher();
+	return {
+		props: data,
+	};
+};

@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { fetcher } from "./fetcher";
+import { fetcher } from "../../utils/_fetcher";
 
 export default function Swr() {
 	const { data, isLoading } = useSWR("swr-page", fetcher);
